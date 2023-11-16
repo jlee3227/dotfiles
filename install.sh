@@ -34,10 +34,15 @@ then
     exit 1
 fi
 
-# stow home-manager
+
+# install kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+# stow dotfiles 
 cd .dotfiles
-mkdir -p "$HOME/.config/home-manager"   # shouldn't be necessary but just in case
+mkdir -p "$HOME/.config/home-manager" "$HOME/.config/kitty"  # shouldn't be necessary but just in case
 stow home-manager -t "$HOME/.config/home-manager"
+stow kitty -t "$HOME/.config/kitty"
 home-manager switch
 
 # add zsh to valid login shells

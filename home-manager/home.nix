@@ -33,11 +33,11 @@
       userEmail = "joon.lee727@gmail.com";
       extraConfig = {
         core = {
-	  editor = "nvim";
-	};
-	color = {
-	  ui = true;
-	};
+          editor = "nvim";
+        };
+        color = {
+          ui = true;
+        };
       };
     };
 
@@ -100,10 +100,60 @@
         nerdtree-git-plugin
         vim-devicons
         vim-nerdtree-syntax-highlight
+        vim-tmux-navigator
       ];
     };
 
-    # TODO: tmux config
+    tmux = {
+      enable = true;
+      shell = "$SHELL";
+      terminal = "tmux-256color"; 
+      baseIndex = 1;
+      mouse = true;
+      prefix = "C-space";
+      plugins = with pkgs.tmuxPlugins; [
+        sensible
+        vim-tmux-navigator
+        catppuccin
+        # tmux-yank
+      ];
+      extraConfig = ''
+        # Force 24-bit color if possible
+        set-option -sa terminal-overrides ",xterm*:Tc"
+
+        # Set prefix to something other than default (Ctrl-b -> Ctrl-space)
+        # unbind C-b
+        # set -g prefix C-space
+        # bind C-space send-prefix
+
+        # Shift + Alt + vim keys to switch windows
+        bind -n M-H previous-window
+        bind -n M-L next-window
+
+        # Mouse support
+        # set -g mouse on
+
+        # Start indexing at 1
+        # set -g base-index 1
+        # set -g pane-base-index 1
+        # set-window-option -g pane-base-index 1
+        # set-option -g renumber windows on
+
+        # Set vi-mode
+        set-window-option -g mode-keys vi
+
+        # Keybindings for copying
+        bind-key -T copy-mode-vi v send-keys -X begin-selection
+        bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+        # bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+        # Open panes in current directory
+        bind '"' split-window -v -c "#{pane_current_path}"
+        bind % split-window -h -c "#{pane_current_path}"
+
+        set -g @catpuccin_flavour 'mocha'
+      '';
+    };
 
     zsh = {
       enable = true;
@@ -118,17 +168,17 @@
         export PATH=$PATH:/usr/local/go/bin
       '';
       plugins = [
-      	{
-	      name = "powerlevel10k";
-	      src = pkgs.zsh-powerlevel10k;
-	      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-	    }
+        {
+          name = "powerlevel10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
       ];
       oh-my-zsh = {
         enable = true;
         plugins = [
-	      "colored-man-pages"
-	      "command-not-found"
+          "colored-man-pages"
+          "command-not-found"
         ];
       };
     };
