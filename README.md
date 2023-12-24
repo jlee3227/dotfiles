@@ -9,3 +9,7 @@ Until I find a better way you can install by cloning this repo in your home dire
 cd ~
 sudo install.sh
 ```
+
+## To Do
+Separate the extra configs for `nvim`, `zsh`, and `tmux` into separate files
+
