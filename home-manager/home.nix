@@ -86,6 +86,10 @@
         nnoremap <C-n> :NERDTree<CR>
         nnoremap <C-t> :NERDTreeToggle<CR>
         nnoremap <C-f> :NERDTreeFind<CR>
+
+        " Emmet config
+        let g:user_emmet_install_global = 0
+        autocmd FileType html,css EmmetInstall
       '';
       coc.enable = true;
       plugins = with pkgs.vimPlugins; [
@@ -101,6 +105,7 @@
         vim-devicons
         vim-nerdtree-syntax-highlight
         vim-tmux-navigator
+        emmet-vim
       ];
     };
 
@@ -169,6 +174,8 @@
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        export ANDROID_HOME=$HOME/Android/Sdk
+        unset NIX_PATH
       '';
       plugins = [
         {
