@@ -2,8 +2,7 @@
 
 # see https://mipmip.github.io/home-manager-option-search/ for a (3rd party) list of options
 {
-  home.username = "joon";
-  home.homeDirectory = "/home/joon";
+  # insert home.username and home.homeDirectory
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
