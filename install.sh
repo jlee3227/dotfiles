@@ -33,7 +33,7 @@ nix --version
 # install stow
 echo "\n~~~INSTALLING stow~~~"
 cd /tmp
-curl -o stow-latetst.tar.gz https://ftp.gnu.org/gnu/stow/stow-latest.tar.gz
+curl -o stow-latest.tar.gz https://ftp.gnu.org/gnu/stow/stow-latest.tar.gz
 tar -xzpf stow-latest.tar.gz && rm stow-latest.tar.gz
 cd stow-*
 ./configure && make
