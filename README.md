@@ -6,8 +6,9 @@ Uses [home-manager](https://nix-community.github.io/home-manager/) to manage too
 
 Until I find a better way you can install by cloning this repo in your home directory and running the install script with elevated privileges.
 ```
-cd ~
-sudo install.sh
+cd .dotfiles
+sudo ./install.sh
+./setup.sh
 ```
 
 ## To Do
