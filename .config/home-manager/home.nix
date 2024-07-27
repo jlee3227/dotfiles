@@ -3,6 +3,8 @@
 # see https://mipmip.github.io/home-manager-option-search/ for a (3rd party) list of options
 {
   # insert home.username and home.homeDirectory
+  home.username = "ejun";
+  home.homeDirectory = "/home/ejun";
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
@@ -152,8 +154,8 @@
         # bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
         # Open panes in current directory
-        bind '"' split-window -v -c "#{pane_current_path}"
-        bind % split-window -h -c "#{pane_current_path}"
+        bind '|' split-window -h -c "#{pane_current_path}"
+        bind '-' split-window -v -c "#{pane_current_path}"
 
         set -g @catpuccin_flavour 'mocha'
       '';
@@ -174,6 +176,7 @@
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
         export ANDROID_HOME=$HOME/Android/Sdk
+        source "$HOME/.cargo/env"
         unset NIX_PATH
       '';
       plugins = [
