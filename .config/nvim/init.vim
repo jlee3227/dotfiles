@@ -1,3 +1,19 @@
+call plug#begin()
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'morhetz/gruvbox'
+ Plug 'preservim/nerdcommenter'
+ Plug 'fatih/vim-go'
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ Plug 'mhinz/vim-startify'
+ Plug 'scrooloose/nerdtree'
+ Plug 'xuyuanp/nerdtree-git-plugin'
+ Plug 'ryanoasis/vim-devicons'
+ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+ Plug 'christoomey/vim-tmux-navigator'
+ Plug 'mattn/emmet-vim'
+call plug#end()
+
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -42,20 +58,3 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Emmet config
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
-
-call plug#begin(“~/.vim/plugged”)
- “ Plugin Section
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'morhetz/gruvbox'
- Plug 'preservim/nerdcommenter'
- Plug 'fatih/vim-go'
- Plug 'vim-airline/vim-airline'
- Plug 'vim-airline/vim-airline-themes'
- Plug 'mhinz/vim-startify'
- Plug 'scrooloose/nerdtree'
- Plug 'xuyuanp/nerdtree-git-plugin'
- Plug 'ryanoasis/vim-devicons'
- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
- Plug 'christoomey/vim-tmux-navigator'
- Plug 'mattn/emmet-vim'
-call plug#end()
