@@ -71,4 +71,11 @@ alias mkdir='mkdir -p'
 # eval "$(fzf --zsh)" # use with ^r 
 # eval "$(zoxide init --cmd cd zsh)"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/usr/local/go/bin"
+
+# fnm
+FNM_PATH="/home/joon/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/joon/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
