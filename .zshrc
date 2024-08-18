@@ -20,6 +20,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # For customizing CLI prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+# eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/pararussel.omp.json)"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
