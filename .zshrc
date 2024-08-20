@@ -75,8 +75,8 @@ alias mkdir='mkdir -p'
 export PATH="$PATH:/usr/local/go/bin"
 
 # fnm
-FNM_PATH="/home/joon/.local/share/fnm"
+FNM_PATH="/home/$(whoami)/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/joon/.local/share/fnm:$PATH"
+  export PATH="/home/$(whoami)/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
