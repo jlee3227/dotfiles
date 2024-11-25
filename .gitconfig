@@ -1,0 +1,18 @@
+[push]
+    default = simple
+
+[core]
+    editor = vim
+
+[difftool]
+    prompt = false
+
+[color]
+    ui = auto
+
+[alias]
+    lp = "log --pretty=\"%C(Yellow)%h %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s\" --date=short"
+
+[user]
+	name = Joon Lee
+	email = joon.lee727@gmail.com

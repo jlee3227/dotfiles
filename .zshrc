@@ -80,3 +80,12 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/$(whoami)/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# fnm
+FNM_PATH="/Users/jlee/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/jlee/Library/Application Support/fnm:$PATH"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
