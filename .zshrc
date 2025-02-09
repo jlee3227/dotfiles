@@ -72,7 +72,12 @@ alias mkdir='mkdir -p'
 # eval "$(fzf --zsh)" # use with ^r 
 # eval "$(zoxide init --cmd cd zsh)"
 
-export PATH="$PATH:/usr/local/go/bin"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+	export PATH="$PATH:$HOME/go/bin"
+else
+    export PATH="$PATH:/usr/local/go/bin"
+fi
 
 # fnm
 FNM_PATH="/home/$(whoami)/.local/share/fnm"
