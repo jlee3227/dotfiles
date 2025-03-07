@@ -1,10 +1,11 @@
 # Created by ejun for 5.8.1
 
 # Enable if on macos:
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-# 	eval "(oh-my-posh init zsh)"
-# fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+	eval "(oh-my-posh init zsh)"
+    alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
